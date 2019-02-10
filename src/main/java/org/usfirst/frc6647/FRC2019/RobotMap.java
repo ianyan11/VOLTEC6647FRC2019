@@ -19,19 +19,19 @@ import com.ctre.phoenix.motorcontrol.NeutralMode;
 public class RobotMap {
 
     /*************** Numero de los Talons y Victors *********************/
-    private static final int LIFT_MOTOR = 5; // Puerto del talon
-    private static final int LIFT_MOTOR_FOLLOWER = 6;
+    private static final int LIFT_MOTOR = 6; // Puerto del talon
+    private static final int LIFT_MOTOR_FOLLOWER = 7;
 
-    private static final int INTAKE_LEFT_WHEEL = 7;
-    private static final int INTAKE_RIGHT_WHEEL = 8;
-    private static final int INTAKE_PIVOT = 9;
+    private static final int INTAKE_LEFT_WHEEL = 8;
+    private static final int INTAKE_RIGHT_WHEEL = 9;
+    private static final int INTAKE_PIVOT = 10;
 
-    private static final int FRONT_LEFT_CHASSIS_PORT = 0;
-    private static final int FRONT_RIGHT_CHASSIS_PORT = 1;
-    private static final int BACK_LEFT_CHASSIS_PORT = 2;
-    private static final int BACK_RIGHT_CHASSIS_PORT = 3;
+    private static final int FRONT_LEFT_CHASSIS_PORT = 1;
+    private static final int FRONT_RIGHT_CHASSIS_PORT = 2;
+    private static final int BACK_LEFT_CHASSIS_PORT = 3;
+    private static final int BACK_RIGHT_CHASSIS_PORT = 4;
 
-    private static final int MID_PORT = 4;
+    private static final int MID_PORT = 5;
     /********************************************/
     /************* chasis ***********************/
     public static PowerDistributionPanel pdp;

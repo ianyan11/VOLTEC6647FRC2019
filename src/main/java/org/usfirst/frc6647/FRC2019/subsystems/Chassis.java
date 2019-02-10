@@ -12,6 +12,7 @@
 package org.usfirst.frc6647.FRC2019.subsystems;
 
 
+import org.usfirst.frc6647.FRC2019.Robot;
 import org.usfirst.frc6647.FRC2019.RobotMap;
 import org.usfirst.frc6647.FRC2019.commands.*;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
@@ -79,7 +80,7 @@ public class Chassis extends Subsystem {
         addChild("RightEncoder",rightEncoder);
         rightEncoder.setDistancePerPulse(1.0);
         rightEncoder.setPIDSourceType(PIDSourceType.kRate);
-        
+
     }
 
     @Override
@@ -92,7 +93,7 @@ public class Chassis extends Subsystem {
     @Override
     public void periodic() {
         // Put code here to be run every loop
-
+        driveTrain.arcadeDrive(Robot.oi.Stick1.getY(), Robot.oi.Stick1.getTwist());
     }
 
 }
