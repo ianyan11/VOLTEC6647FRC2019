@@ -11,6 +11,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.InvertType;
@@ -46,7 +47,10 @@ public class RobotMap {
     public static final int FRONT_HAB_PISTON_ACTIVATE = 0;
 	public static final int FRONT_HAB_PISTON_DEACTIVATE = 1;
 	public static final int REAR_HAB_PISTON_ACTIVATE = 2;
-	public static final int REAR_HAB_PISTON_DEACTIVATE = 3;
+    public static final int REAR_HAB_PISTON_DEACTIVATE = 3;
+    
+    public static DoubleSolenoid frontPiston;
+    public static DoubleSolenoid rearPiston;
     /********************************************/
     /*****************Elevator*****************/
     public static WPI_TalonSRX lift;
@@ -56,6 +60,10 @@ public class RobotMap {
     public static WPI_VictorSPX intakeLeft;
     public static WPI_VictorSPX intakeRight;
     public static WPI_TalonSRX intakePivote;
+
+    public static final int PISTON_H_ACTIVATE = 4;
+    public static final int PISTON_H_DEACTIVATE = 5;
+    public static DoubleSolenoid HPiston;
     /********************************************/
 	
     public static void init(){
@@ -82,7 +90,10 @@ public class RobotMap {
 	    frontRight.setNeutralMode(NeutralMode.Brake);
 	    backLeft.setNeutralMode(NeutralMode.Brake);
         backRight.setNeutralMode(NeutralMode.Brake);
-        midMotor.setNeutralMode(NeutralMode.Brake); 
+        midMotor.setNeutralMode(NeutralMode.Brake);
+        
+        frontPiston = new DoubleSolenoid(FRONT_HAB_PISTON_ACTIVATE, FRONT_HAB_PISTON_DEACTIVATE);
+        rearPiston = new DoubleSolenoid(REAR_HAB_PISTON_ACTIVATE, REAR_HAB_PISTON_DEACTIVATE);
 
         /**********************INTAKE**************************/
         intakeLeft = new WPI_VictorSPX(INTAKE_LEFT_WHEEL);
@@ -97,6 +108,7 @@ public class RobotMap {
         intakeRight.setNeutralMode(NeutralMode.Coast);
         intakePivote.setNeutralMode(NeutralMode.Brake);
 
+        HPiston = new DoubleSolenoid(PISTON_H_ACTIVATE, PISTON_H_DEACTIVATE);
         /************************ELEVATOR************************/
         lift = new WPI_TalonSRX(LIFT_MOTOR);
         liftFollower = new WPI_VictorSPX(LIFT_MOTOR_FOLLOWER);
