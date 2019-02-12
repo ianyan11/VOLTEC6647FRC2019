@@ -60,6 +60,12 @@ public class Intake extends Subsystem {
         leftIntakeWheel.set(ControlMode.PercentOutput, 1);
         rightIntakeWheel.set(ControlMode.PercentOutput, 1);
     }
+    public void Hatch_Push(){
+    }
+    public void Hatch_In(){
+
+    }
+
     public void initDefaultState(){
         Stop_Intake();
     }
